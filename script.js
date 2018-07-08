@@ -6,17 +6,12 @@ function get_random_int(max) {
 
 const n      = (get_random_int(COUNT) + 1).toString();
 const track  = "tracks/" + n.padStart(2, "0") + ".mp3";
-const player = document.getElementById("player");
 
-player.innerHTML = '<source src="' + track + '" type="audio/mpeg"></source>';
+var player = new Howl({
+  src: [track],
+  autoplay: true
+});
 
 function play() {
-  if (player.paused) {
-    player.play();
-  } else {
-    player.pause();
-  }
-}
-
-window.onload = function () {
+  return player.playing() ? player.pause() : player.play();
 }
