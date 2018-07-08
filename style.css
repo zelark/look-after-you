@@ -8,7 +8,7 @@ body {
 }
 
 .track {
-    margin: 40px auto;
+    margin: 36px auto;
 }
 
 .track:before {
@@ -21,7 +21,11 @@ body {
 }
 
 .side {
-    grid-column: span 3;
+    grid-column: span 1;
+}
+
+.content {
+    grid-column: span 10;
 }
 
 .play-btn {
@@ -33,8 +37,4 @@ body {
 
 .play-btn:hover {
     cursor: pointer;
-}
-
-.content {
-    grid-column: span 6;
 }
