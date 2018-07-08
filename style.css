@@ -8,7 +8,7 @@ body {
 }
 
 .track {
-    margin: 36px auto;
+    margin: 30px auto;
 }
 
 .track:before {
@@ -16,6 +16,7 @@ body {
 }
 
 .wrapper {
+    margin-top: 24px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 }
@@ -29,10 +30,10 @@ body {
 }
 
 .play-btn {
-    margin-top: 20px;
+    margin: 0;
     padding: 2px;
-    text-align: center;
-    font-size: 30pt;
+    width: 34px;
+    font-size: 16pt;
 }
 
 .play-btn:hover {
