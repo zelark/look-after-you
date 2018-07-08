@@ -1,0 +1,29 @@
+@charset "utf-8";
+html,
+body {
+    background-color: #000000;
+    font-family: 'Fira Mono', 'Ubuntu Mono', 'Courier', monospace;
+    color: #EEE;
+    font-size: 14pt;
+}
+
+.track {
+    margin: 40px auto;
+}
+
+.track:before {
+    content: '*';
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.side {
+    grid-column: span 3;
+}
+
+.content {
+    grid-column: span 6;
+}
