@@ -24,6 +24,17 @@ body {
     grid-column: span 3;
 }
 
+.play-btn {
+    margin-top: 20px;
+    padding: 2px;
+    text-align: center;
+    font-size: 30pt;
+}
+
+.play-btn:hover {
+    cursor: pointer;
+}
+
 .content {
     grid-column: span 6;
 }
