@@ -31,11 +31,26 @@ body {
 
 .play-btn {
     margin: 0;
-    padding: 2px;
     width: 34px;
     font-size: 16pt;
 }
 
 .play-btn:hover {
     cursor: pointer;
+}
+
+.play-svg {
+    vertical-align: middle;
+    width: 2.0em;
+    height: 2.0em;
+}
+
+.play-svg-color {
+    transition: fill 0.16s linear;
+    fill: #EEE;
+}
+
+.play-svg-color:hover {
+    fill: #FFF;
+    transition: none;
 }
