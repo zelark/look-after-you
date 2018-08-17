@@ -1,18 +1,30 @@
 const COUNT = 4; // number of tracks
 
-function get_random_int(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
 
-const n      = (get_random_int(COUNT) + 1).toString();
-const track  = "tracks/" + n.padStart(2, "0") + ".mp3";
+const getRandomInt = max =>
+  Math.floor(Math.random() * Math.floor(max));
 
-var player = new Howl({
-  src: [track],
-  autoplay: true,
-  volume: 0.8
-});
 
-function play() {
-  return player.playing() ? player.pause() : player.play();
-}
+const trackName = n => `tracks/${n}.mp3`;
+
+
+const howl = track =>
+  new Howl({ src: [track], autoplay: true, volume: 0.8 });
+
+
+const next = (init) => {
+  let n = init;
+  let player = howl(trackName(n));
+
+  return () => {
+    player.stop();
+    n += 1;
+    if (n > COUNT) n = 1;
+    player = howl(trackName(n));
+    console.log(player._src);
+  };
+};
+
+
+const button = document.getElementById('button');
+button.addEventListener('click', next(getRandomInt(COUNT) + 1));
