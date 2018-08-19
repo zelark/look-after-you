@@ -12,14 +12,13 @@ const howl = track =>
   new Howl({ src: [track], autoplay: true, volume: 0.8 });
 
 
-const next = (init) => {
-  let n = init;
+const next = (rand) => {
+  let n = rand();
   let player = howl(trackName(n));
 
   return () => {
     player.stop();
-    n += 1;
-    if (n > COUNT) n = 1;
+    n = rand();
     player = howl(trackName(n));
     console.log(player._src);
   };
@@ -27,4 +26,4 @@ const next = (init) => {
 
 
 const button = document.getElementById('button');
-button.addEventListener('click', next(getRandomInt(COUNT) + 1));
+button.addEventListener('click', next(() => getRandomInt(COUNT) + 1));
